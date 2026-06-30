@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧬 AI Bioinformatics Assistant
 
 An intelligent AI-powered chatbot for bioinformatics education and sequence analysis. Built with FastAPI, Streamlit, and Openrouter API.
@@ -338,3 +339,7 @@ For more information about Openrouter API, visit: https://openrouter.ai/
 
 **Version**: 1.0.0  
 **Last Updated**: June 2026
+=======
+# Streamlit_-BioGenius
+AI-Powered Bioinformatics Education &amp; Sequence Analysis Platform for assisting patients 
+>>>>>>> 56d08dedb9139009293da91959b4654e33aa8c43
