@@ -1,0 +1,165 @@
+╔════════════════════════════════════════════════════════════════════╗
+║          🧬 AI BIOINFORMATICS ASSISTANT - QUICK START              ║
+╚════════════════════════════════════════════════════════════════════╝
+
+📋 5-MINUTE SETUP
+
+1️⃣ GET API KEY
+   └─ Go to https://openrouter.ai/
+   └─ Sign up and create an API key
+   └─ Copy your key (looks like: sk_xxxxxxx...)
+
+2️⃣ CREATE .env FILE
+   └─ Copy: .env.example → .env
+   └─ Edit .env and paste your API key
+
+   Example:
+   ───────────────────────────────
+   OPENROUTER_API_KEY=sk_your_key_here
+   BACKEND_URL=http://localhost:8000
+   ───────────────────────────────
+
+3️⃣ INSTALL DEPENDENCIES
+   └─ pip install -r requirements.txt
+
+4️⃣ START SERVICES
+
+   Option A (Easy - Windows PowerShell):
+   └─ .\run.ps1
+
+   Option B (Easy - Linux/Mac):
+   └─ chmod +x run.sh && ./run.sh
+
+   Option C (Manual):
+   └─ Terminal 1: python backend/main.py
+   └─ Terminal 2: streamlit run frontend/app.py
+
+5️⃣ OPEN IN BROWSER
+   └─ Frontend: http://localhost:8501
+   └─ API Docs: http://localhost:8000/docs
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 FIRST TEST
+
+1. Upload examples/sample_sequences.fasta
+   └─ Click "Analyze Sequences"
+   └─ See results appear
+
+2. Ask a question: "What is GC content?"
+   └─ Wait for AI response
+
+3. Try: "Analyze the uploaded sequence"
+   └─ AI uses context from file
+
+═══════════════════════════════════════════════════════════════════════
+
+❓ NEED HELP?
+
+Stuck?                          Solution
+─────────────────────────────────────────────────────────────────────
+API key error                 → Check .env file has correct key
+Port 8000 in use              → Kill process: taskkill /PID <pid> /F
+"Cannot connect to backend"   → Make sure python backend/main.py runs
+Need more details             → Read SETUP_GUIDE.md
+                              → Read README.md
+
+═══════════════════════════════════════════════════════════════════════
+
+📁 PROJECT STRUCTURE
+
+APIs/
+├── frontend/app.py           ← Streamlit UI
+├── backend/main.py           ← FastAPI server
+├── utils/                    ← Analysis code
+├── examples/                 ← Test files
+├── requirements.txt          ← Dependencies
+├── .env                      ← ⭐ Create this!
+├── run.ps1 / run.sh          ← Start scripts
+├── README.md                 ← Full docs
+└── SETUP_GUIDE.md           ← Detailed setup
+
+═══════════════════════════════════════════════════════════════════════
+
+🔗 IMPORTANT URLS
+
+Service              URL
+─────────────────────────────────────────────
+Frontend (Chat)      http://localhost:8501
+Backend (API)        http://localhost:8000
+API Docs             http://localhost:8000/docs
+Health Check         http://localhost:8000/health
+Openrouter           https://openrouter.ai/
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 EXAMPLE QUESTIONS
+
+"What is GC content?"
+"Explain genome assembly"
+"Analyze this sequence"
+"What is CRISPR?"
+"How does DNA replication work?"
+
+═══════════════════════════════════════════════════════════════════════
+
+✨ FEATURES
+
+✓ Chat with AI bioinformatics expert
+✓ Upload and analyze FASTA/FASTQ files
+✓ Calculate GC content automatically
+✓ Detect Open Reading Frames
+✓ Get AI explanations of results
+✓ Save chat history
+✓ Export results as JSON
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 SUPPORTED FILE FORMATS
+
+FASTA:   .fasta, .fa, .fna
+FASTQ:   .fastq, .fq
+Text:    .txt (auto-detect)
+
+Example:
+┌─────────────────────────────────┐
+│ >sequence1                      │
+│ ATGCGATCGATCGATCGATCGATCGATCG   │
+│ >sequence2                      │
+│ GCTAGCTAGCTAGCTAGCTAGCTAGCTA   │
+└─────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════
+
+⚠️ COMMON ISSUES & FIXES
+
+Issue: ModuleNotFoundError: No module named 'fastapi'
+Fix:   pip install -r requirements.txt
+
+Issue: Port 8000 already in use
+Fix:   taskkill /PID <process_id> /F
+       or: lsof -i :8000 | grep LISTEN && kill -9 <pid>
+
+Issue: OPENROUTER_API_KEY not configured
+Fix:   1. Check .env file exists
+       2. Check it has your actual API key
+       3. Restart backend
+
+Issue: "Cannot connect to backend"
+Fix:   1. Check http://localhost:8000/health
+       2. Start backend: python backend/main.py
+       3. Check firewall not blocking port 8000
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 READY TO GO!
+
+You're all set. Start the application and begin exploring bioinformatics
+with AI assistance!
+
+For detailed setup instructions, see: SETUP_GUIDE.md
+For full documentation, see: README.md
+
+Happy analyzing! 🧬
+
+═══════════════════════════════════════════════════════════════════════
